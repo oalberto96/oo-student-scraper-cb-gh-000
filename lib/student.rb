@@ -13,7 +13,12 @@ class Student
     queue = students_array
     result = []
     i = 0
+    j = 0
     Scraper.scrape_index_page("http://165.227.31.156:56576/fixtures/student-site/").each do |student_hash|
+      if j == 0
+        binding.pry
+        j += 1
+      end
       while i < queue.size
         if queue[i][:name] == student_hash[:name]
         end
